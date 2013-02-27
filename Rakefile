@@ -57,7 +57,7 @@ task :post do
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
-  
+
   puts "Creating new post: #{filename}"
   open(filename, 'w') do |post|
     post.puts "---"
@@ -83,7 +83,7 @@ task :page do
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
-  
+
   mkdir_p File.dirname(filename)
   puts "Creating new page: #{filename}"
   open(filename, 'w') do |post|
@@ -260,7 +260,7 @@ end # end namespace :theme
 # So we'll have to change the folder name once we get the name.
 #
 # url - String, Required url to git repository.
-#        
+#
 # Returns theme manifest hash
 def theme_from_git_url(url)
   tmp_path = JB::Path.build(:theme_packages, :node => "_tmp")
